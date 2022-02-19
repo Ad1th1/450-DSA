@@ -1,0 +1,62 @@
+#include<iostream>
+#include<array>
+using namespace std;
+#define mas 100
+
+class stack{
+    int top;
+    int a[100];
+    public:
+        stack(){
+            top=-1;
+        
+    }
+    void push(int ele){
+        if(top<mas){
+        a[++top]=ele;
+        
+        }
+        else
+        cout<<"Full";
+    }
+    int pop(){
+        if(top==-1)
+        return -1;
+        else
+        return a[top--];
+        
+    }
+    void display(){
+        for(int i=top;i>=0;i--)
+        cout<<a[i]<<" ";
+    }
+
+};
+
+int main(){
+    stack s;
+    cout<<"1.Push 2.Pop 3.Display 4.Peek";
+    do{
+        int n,ele;
+        cin>>n;
+        switch(n){
+            case 1:{
+                cout<<"/n Enter element";
+                cin>>ele;
+                s.push(ele);
+                break;
+            }
+            case 2:{
+                
+                cout<<s.pop();
+                break;
+            }
+            case 3:{
+                s.display();
+                break;
+            }
+            case 4:
+            return 0;
+        }
+    }while(1);
+}
