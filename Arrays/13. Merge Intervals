@@ -1,0 +1,22 @@
+class Solution {
+public:
+    vector<vector<int>> merge(vector<vector<int>>& i) {
+        vector<vector<int>> mi;
+        if(i.size()==0)
+            return mi;
+        sort(i.begin(),i.end());
+        vector<int> temp=i[0];
+        
+        for(auto it : i){
+            if(it[0]<=temp[1]){
+                temp[1]=max(it[1],temp[1]);
+            }
+            else{
+                mi.push_back(temp);
+                temp=it;
+            }
+        }
+        mi.push_back(temp);
+        return mi;
+    }
+};
