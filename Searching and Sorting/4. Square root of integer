@@ -1,0 +1,28 @@
+class Solution {
+  public:
+    int countSquares(int N) {
+        int count=0,t=1;
+        for(int i=1;t<N;i++){
+            t=i*i;
+            if(t<N)
+            count++;
+        }
+        return count;
+        
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        
+        cin>>N;
+
+        Solution ob;
+        cout << ob.countSquares(N) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
