@@ -1,0 +1,69 @@
+
+  
+#include<iostream>
+using namespace std;
+#define max_size 30
+class stack{
+    int top;
+    int a[100];
+    public:
+    stack(){
+        top=-1;
+
+    }
+    void push(int ele){
+        if(top==max_size)
+        cout<<"Overflow";
+        else
+        a[++top]=ele;
+    }
+
+    int pop(){
+        if(top==-1){
+        cout<<"Underflow";
+        return -1;
+        }
+        else
+        return a[top--];
+    }
+    int peek(){
+        if(top==-1){
+        cout<<"Underflow";
+        return -1;
+        }
+        else
+        return a[top];
+    }
+    void display(){
+        for(int i=top;i>=0;i--)
+        cout<<a[i]<<" ";
+    }
+};
+
+int main(){
+    stack s;
+    cout<<"1.PUSH 2.POP 3.DISPLAY 4.EXIT";
+    do{
+        cout<<"Enter option";
+        int n,ele;
+        cin>>n;
+        switch(n){
+            case 1:{
+                cout<<"Enter element";
+                cin>>ele;
+                s.push(ele);
+                break;
+            }
+            case 2:{
+                cout<<s.pop();
+                break;
+            }
+            case 3:{
+                s.display();
+                break;
+            }
+            case 4:
+            return 0;
+        }
+    }while(1);
+}
