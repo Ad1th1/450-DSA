@@ -1,0 +1,30 @@
+class Solution
+{
+    public:
+    //Function to remove duplicates from unsorted linked list.
+    Node * removeDuplicates( Node *head) 
+    {
+     if(head==NULL)
+     return head;
+     
+     unordered_map<int,int>freq;
+     Node* prev=NULL;
+     Node* temp=head;
+     while(temp!=NULL){
+         if(!freq[temp->data]){
+             freq[temp->data]=1;
+             prev=temp;
+             
+         }
+         else{
+             Node* a=temp;
+             prev->next=temp->next;
+             delete(a);
+             
+    
+         }
+         temp=temp->next;
+     }
+     return head;
+    }
+};
