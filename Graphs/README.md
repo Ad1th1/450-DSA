@@ -5,5 +5,7 @@ Dijkstra Algorithm:
 	> doesn't work for -ve weights
 	
 Components of a graph = disconnected portions of graph
+
+Topological Sort
 	
 		
