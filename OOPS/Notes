@@ -1,0 +1,4 @@
+Destructor syntax: ~Constructor()
+
+destructor is called when we delete the created object or if it goes out of scope
+
