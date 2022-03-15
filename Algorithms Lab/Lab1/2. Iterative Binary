@@ -2,28 +2,31 @@
 using namespace std;
 int count=0;
 
-int Binarysearch(int arr[],int l,int r,int k){
-    count++;
+int Binarysearch(int arr[],int l,int r,int x){
+
     while (l <= r) {
-        count++;
+            count++;
+            count++;
         int m = l + (r - l) / 2;
- 
+
         count++;
         if (arr[m] == x){
             count++;
             return m;
- 
+
         }
         count++;
         if (arr[m] < x){
-            count++:
+            count++;
             l = m + 1;
+
         }
         else{
-                count++;
+          count++;
             r = m - 1;
         }
     }
+    count++;    // for while loop
     count++;
     return -1;
 }
@@ -42,7 +45,7 @@ int main(){
  cin>> x;
  int l=arr[0];
  int r=arr[n-1];
- int result = Binarysearch(arr[],l,r,x);
+ int result = Binarysearch(arr,l,r,x);
  (result == -1)? cout<<"Element is not present in array"
  : cout<<"Element is present at index " <<result;
  cout<<endl;
