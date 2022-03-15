@@ -1,0 +1,51 @@
+#include<iostream>
+using namespace std;
+int count=0;
+
+int Binarysearch(int arr[],int l,int r,int k){
+    count++;
+    while (l <= r) {
+        count++;
+        int m = l + (r - l) / 2;
+ 
+        count++;
+        if (arr[m] == x){
+            count++;
+            return m;
+ 
+        }
+        count++;
+        if (arr[m] < x){
+            count++:
+            l = m + 1;
+        }
+        else{
+                count++;
+            r = m - 1;
+        }
+    }
+    count++;
+    return -1;
+}
+
+int main(){
+    int arr[25], n, x;
+
+ cout<<"enter no. of elements";
+ cin>>n;
+
+ cout<<"enter "<< n <<" elements";
+ for(int i=0;i<n;i++)
+ cin>>arr[i];
+
+ cout<<"enter the element to be searched";
+ cin>> x;
+ int l=arr[0];
+ int r=arr[n-1];
+ int result = Binarysearch(arr[],l,r,x);
+ (result == -1)? cout<<"Element is not present in array"
+ : cout<<"Element is present at index " <<result;
+ cout<<endl;
+ cout<<"Number of steps for binary search function "<<count;
+ return 0;
+}
