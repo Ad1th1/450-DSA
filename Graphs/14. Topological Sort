@@ -1,5 +1,6 @@
 1. Keep printing those nodes that have an indegree of 0 and then delete them
 2. If topological sort is a success, size of answer will be equal to the number of vertices
+3. Time and space complexity O(V)
 
 class Solution
 {
