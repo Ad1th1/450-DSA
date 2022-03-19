@@ -1,0 +1,44 @@
+Node* reverse(Node *head){
+    Node *prev=NULL, *curr=head, *next=NULL;
+    while(curr!=NULL){
+        next=curr->next;
+        curr->next=prev;
+        prev=curr;
+        curr=next;
+    }
+    return prev;
+}
+
+class Solution
+{
+    public:
+    Node* addOne(Node *head) 
+    {
+        head=reverse(head);
+        bool f=true;
+        Node* curr=head;
+        while(curr && f==true){
+            if(curr->data==9 && curr->next==NULL){
+                curr->data=1;
+                Node *temp=new Node(0);
+                temp->next=head;
+                head=temp;
+                curr=curr->next;
+                
+            }
+            else if(curr->data==9){
+                curr->data=0;
+                curr=curr->next;
+            }
+            else{
+                curr->data=curr->data+1;
+                
+                f=false;
+            }
+            
+        }
+        head=reverse(head);
+        return head;
+        
+    }
+};
