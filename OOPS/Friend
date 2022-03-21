@@ -1,3 +1,5 @@
+Friend - function that can access functions of a class/a class to which it befriends
+
 #include<iostream>
 #include<string>
 
@@ -16,7 +18,7 @@ class Human{
     cout<<name<<endl<<age<<endl;
 }
 friend void display(Human man);  //friend to class Human
-
+// friend class classname
 };
 
 void display(Human man){
