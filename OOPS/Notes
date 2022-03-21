@@ -9,4 +9,8 @@ destructor is called when we delete the created object or if it goes out of scop
 
 static - variable
   -only checked during first execution
-  a
+  
+private and protected functions are accessible only to member functions
+to access outside member function use 'friend' function
+
+by default, access specifier is private
