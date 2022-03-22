@@ -20,7 +20,7 @@ void bubblesort(int a[],int n){
         count++;  //when second for loop is false
     }
     count++;       //when first for loop is false
-       
+
 }
 
 int main(){
@@ -33,12 +33,13 @@ int main(){
  for(int i=0;i<n;i++)
  cin>>arr[i];
 
-bubblesort();
+bubblesort(arr,n);
 for(int i=0;i<n;i++){
-        
-        cout<<a[i]<<" ";
+
+        cout<<arr[i]<<" ";
         }
 
-    
+
  return 0;
 }
+
