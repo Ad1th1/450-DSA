@@ -44,7 +44,7 @@ int main(){
  cin>> x;
  int l=arr[0];
  int r=arr[n-1];
- int result = Binarysearch(arr[],l,r,x);
+ int result = Binarysearch(arr,l,r,x);
  (result == -1)? cout<<"Element is not present in array"
  : cout<<"Element is present at index " <<result;
  cout<<endl;
