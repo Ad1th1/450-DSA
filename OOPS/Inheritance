@@ -1,0 +1,41 @@
+Inheritance:
+
+The capability of a class to derive properties and characteristics from another class is called Inheritance.
+
+> class from which we inherit = base class
+> class which inserts = sub-class
+
+#include<iostream>
+using namespace std;
+
+class Person{
+  public:
+    string name;
+    int age;
+    void setName(string iname){
+      name=iname;
+    }
+    void setAge(int iage){
+      age=iage;
+    }
+};
+
+class Student : public Person{
+  public:
+    int id;
+    void setId(int iid){
+      id=iid;
+    }
+    void introduce(){
+      cout<<"Hi I am "<<name<<" and I am "<<age<<" years old and my student ID is"<< id;
+    }
+};
+
+int main(){
+  Student anil;
+  anil.setName("anil");
+  anil.setAge(24);
+  anil.setId(12345);
+  anil.introduce();
+  return 0;
+}
