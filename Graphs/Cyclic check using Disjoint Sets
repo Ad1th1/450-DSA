@@ -1,0 +1,56 @@
+-> find operation checks if two nodes haave the same absolute root or not
+-> disjoint sets cannot detect cycles in an undirected graph
+-> to make union, make one absolute root point to another
+-> have a node and parent pair.
+-> Time complexity = O(E * V)
+-> Union operation has no directionality
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<int> dsuf;
+
+int find(int v){
+  if(dsuf[v]==-1)
+    return v;
+  return find(dsuf[v]);   //look at the parent of the element at index v in dsuf
+}
+
+void union_op(int fromP,toP){
+  fromP = find(fromP);
+  toP = find(toP);
+  dsuf[fromP] = toP;
+}
+
+bool isCyclic(vector<pair<int,int>> &edge_List){
+  for(auto p:edge_List){
+    int fromP = find(p.first);  //find absolute parent of first node
+    int toP = find(p.second);  //find absolute parent of second node
+
+    if(fromP == topP)
+      return true;
+
+    union_op(fromP,toP);    // if not the same absolute parent make it a union
+  }
+  return false;
+}
+
+int main(){
+  int E; //number of edges
+  int V;  //number of vertices
+  cin>>E>>V;
+
+  dsuf.resize(V,-1);
+  vector<pair<int,int>> edge_List;
+  for(int i=0;i<E;++i){
+    int from,to;
+    cin>>from>>to;
+    edge_List.push_back({from,to});
+  }
+  if(isCyclic(edge_List))
+    cout<<"TRUE";
+  else  
+    cout<<"FALSE";
+  return 0;
+}
