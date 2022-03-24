@@ -14,6 +14,9 @@ private and protected functions are accessible only to member functions
 to access outside member function use 'friend' function
 
 by default, access specifier is private
+> private -> only main class
+> public -> everywhere
+> protected -> main and sub class
 
 > inheritance allows us to define the features described in one class in another class
 
