@@ -6,6 +6,6 @@ Dijkstra Algorithm:
 	
 Components of a graph = disconnected portions of graph
 
-Topological Sort
-	
+Dynamic Programming is mainly an optimization over plain recursion. Wherever we see a recursive solution that has repeated calls for same inputs, we can optimize it using Dynamic Programming. 
+~ like preparing a table
 		
