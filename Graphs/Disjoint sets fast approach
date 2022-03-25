@@ -1,0 +1,5 @@
+Path Compression approach:
+  - reduces height of tree
+  - rank of tree remains the same
+  - O(log(n)) performance
+Rank by Union
