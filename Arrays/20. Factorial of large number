@@ -1,0 +1,22 @@
+class Solution {
+public:
+    vector<int> factorial(int N){
+        vector<int> ans;
+        int val = 0;
+        ans.push_back(1);
+        for(int i=2;i<=N;i++){
+            int car=0;
+            for(int j=0;j<ans.size();j++){
+                val = ans[j]*i + car;
+                ans[j]=val%10;
+                car = val/10;
+            }
+            while(car!=0){
+                ans.push_back(car%10);
+                car = car/10;
+            }
+        }
+        reverse(ans.begin(),ans.end());
+        return ans;
+    }
+};
