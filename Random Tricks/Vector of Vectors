@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+  vector<vector<int>> vec;
+  int num = 10;
+  int row = 3,col = 3;
+  for(int i = 0;i<row;i++){
+    vector<int> v1;
+    for(int j=0;j<col;j++){
+      v1.push_back(num);
+      num+=1;
+    }
+  vec.push_back(v1);
+  }
+
+  for(int i=0;i<row;i++){
+    for(int j=0;j<col;j++){
+      cout<<vec[i][j]<<" ";
+    }
+    cout<<endl;
+  }
+}
