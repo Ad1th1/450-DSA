@@ -1,3 +1,9 @@
+Time Complexity = O(nlogn)
+Space Complexity = O(n)
+
+Sort first half(A, l, m)
+Sort second half(A, m+1, r)
+Merge (A, l, m, r)
 
 class Solution
 {
