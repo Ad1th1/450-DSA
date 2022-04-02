@@ -1,0 +1,50 @@
+class Solution
+{
+    public:
+    Node* reverse(Node* head){
+        Node* curr=head, *prev=NULL, *next=NULL;
+        while(curr!=NULL){
+            next=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=next;
+        }
+        return prev;
+    }
+    struct Node* addTwoLists(struct Node* l1, struct Node* l2)
+    {
+       l1=reverse(l1);
+       l2=reverse(l2);
+       int c=0,s=0;
+       Node* start=NULL;
+       Node* curr=NULL;
+       Node* temp;
+       while(l1!=NULL || l2!=NULL){
+            s = c + (l1? l1->data:0) + (l2? l2->data:0);
+            c = (s>=10)?1:0;
+            s = s%10;   //otherwise we get 10 in place of 0 sometimes
+            temp = new Node(s);
+            if(start == NULL){
+                start = temp;       // so that we can reverse the final answer
+                curr = temp;
+                
+            }
+            else{
+                curr->next = temp;
+                curr = temp;
+            }
+            if(l1) 
+                l1 = l1->next;
+            if(l2) 
+                l2 = l2->next;
+
+       }
+       if(c>0){                 //99+1 example 
+           Node* temp = new Node(c);
+           curr->next = temp;
+           curr = temp;
+       }
+       start = reverse(start);
+       return start;
+    }
+};
