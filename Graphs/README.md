@@ -1,12 +1,10 @@
 Important Points to remember:
 
 BFS - queue implementation for iterative approach
-
 DFS - stack implementation for iterative approach
 
 Dijkstra Algorithm: 
 	> used to find shortest path in a graph
-	
 	> doesn't work for -ve weights
 	
 Components of a graph = disconnected portions of graph
