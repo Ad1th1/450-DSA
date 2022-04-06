@@ -20,7 +20,7 @@ MST
 -> contains N nodes and N-1 edges\
 -> every node is reachable -> spanning tree\
 -> minimum cost of edge weight -> MST\
--> Prims and Kruskal algorithm\
+-> Prims and Kruskal algorithm
 
 Connected Graph:\
 -> visited array for multiple components
