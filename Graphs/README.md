@@ -1,6 +1,6 @@
 Important Points to remember:
 
-BFS - queue implementation for iterative approach
+BFS - queue implementation for iterative approach\
 DFS - stack implementation for iterative approach
 
 Dijkstra Algorithm: 
