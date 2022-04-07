@@ -2,6 +2,13 @@
 -> done by first sorting all edges according to weights
 -> uses disjoint set data structure, vector for parent and rank(to compute parent)
 
+-> check if two nodes belong to the same component
+      -> if they do, dont connect them ( we can't have cycles in an MST)
+      -> if they don't, connect them
+      
+-> Time Complexity = O(Mlog(M)) -> sorting of edges
+-> Space Complexity = O(M) -> parent, rank vector
+
 #include<bits/stdc++.h>
 using namespace std;
 struct node {
