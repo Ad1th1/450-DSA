@@ -3,3 +3,39 @@ every edge (u, v) either connects a vertex from U to V or a vertex from V to U. 
 u belongs to U and v to V, or u belongs to V and v to U. We can also say that there is no edge that connects vertices of same set.
 
 Just check if there is an odd cycle, if so, then it is not bipartite.
+
+
+bool bipartiteBFS(int src,vector<int> adj[],int color[]){
+    queue<int> q;
+    q.push(src);
+    color[src] = 1;
+    while(!q.empty()){
+        int node = q.front();
+        q.pop();
+        for(autoit:adj[node]){
+            if(color[it]==-1)
+                color[it] = 1 - color[node];
+                q.push(it);
+            else if(color[it]==color[node])
+            return false;
+        }
+    }
+    return true;
+}
+
+bool checkbipartite(vector<int> aadj[],int n){
+    int color[n];
+    for(int i=0;i<n;i++){
+        color[i]=-1;
+    }
+    for(int i=0;i<n;i++){
+        if(color[i]=-1){
+            if(!bipartiteBFS(i,adj,color)){
+                return false;
+            }
+        }
+    }
+return true;
+
+
+}
