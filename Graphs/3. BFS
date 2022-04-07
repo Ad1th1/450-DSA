@@ -1,3 +1,6 @@
+BFS is a graph traversal technique implemented using queue
+The time complexity of BFS traversal is O(V + E)
+
 #include <bits/stdc++.h>
 using namespace std;
 
