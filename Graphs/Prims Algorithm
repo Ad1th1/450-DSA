@@ -1,0 +1,4 @@
+Have three arrays
+-> key = stores all the adjeacent edges to be considered
+-> mst 
+-> parent = stores parent of each node
