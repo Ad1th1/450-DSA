@@ -5,7 +5,11 @@ DFS - stack implementation for iterative approach
 
 Dijkstra Algorithm: 
 	> used to find shortest path in a graph\
-	> doesn't work for -ve weights
+	> doesn't work for -ve weights	-> reduced maximally -> infinite loop
+
+Bellman-Ford Algorithm:
+	> works for negative edges
+	
 
 Topological Sort:
 	> check if indegree is 0, and push into queue, indegree-- of adjeacent nodes
