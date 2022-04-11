@@ -1,0 +1,52 @@
+-> to find shortest path to each node
+-> use priority queue(pair(distance from source,node)), distance vector(initialized to infinity)
+-> for every node popped from the priority queue, check the distance to the adjacent node. If it is smaller, update distance vector
+-> Time Complexity = O(n+e)log(n)     //logn for priority queue
+-> Space Complexity = O(n)
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int V,E,src;
+    cin>>V>>E;
+    vector<pair<int,int>>g[V+1];        //node, weight
+
+    int a,b,wt;
+    for(int i=0;i<E;i++){
+        cin >> a >> b >> wt;
+        g[a].push_back(make_pair(b,wt));       //node, weight
+        g[b].push_back(make_pair(a,wt));
+    }
+    cin>>src;
+
+    priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;    //pair(distance,vertex)
+    vector<int> dist(E+1, INT_MAX);
+
+    dist[src] = 0;
+    pq.push(make_pair(0,src));
+
+    while(!pq.empty()){
+        int latestdist = pq.top().first;
+        int prev = pq.top().second;
+
+        pq.pop();
+
+        vector<pair<int,int>>::iterator it;
+        // traverse through all the adjacent nodes of the node we just popped
+        for(it=g[prev].begin();it!=g[prev].end();it++){
+            int next = it->first;
+            int nextDist = it->second;
+            if(dist[next] > dist[prev] + nextDist){
+                    dist[next] = dist[prev] + nextDist;
+                    pq.push(make_pair(dist[next],next));
+            }
+        }
+    }
+
+    cout<<"The distance from the source is\n";
+    for(int i=1;i<=V;i++){
+        cout<<i<<" -> "<<dist[i]<<"\n";
+    }
+
+}
