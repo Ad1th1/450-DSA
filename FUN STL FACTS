@@ -1,1 +1,5 @@
-> INT_MIN and INT_MAX when you want to give your variable a superbigor small value
+> INT_MIN and INT_MAX when you want to give your variable a super big or small value
+> Syntax for priority queue:
+      priority_queue <int, vector<int>, greater<int>> g = gq; 
+      
+
