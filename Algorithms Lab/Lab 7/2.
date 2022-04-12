@@ -1,0 +1,45 @@
+2. Maximum and Minimum using divide and conquer
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int DAC_MAX(int arr[],int index,int l){
+    int maxi;
+    if(index >= l-2){
+        if(arr[index]>arr[index+1])
+            return arr[index];
+        else
+            return arr[index+1];
+    }
+    maxi = DAC_MAX(arr,index+1,l);
+    if(arr[index] > maxi)
+     return arr[index];
+    else
+        return maxi;
+}
+
+int DAC_MIN(int arr[],int index,int l){
+    int mini;
+    if(index >= l-2){
+        if(arr[index]<arr[index+1])
+            return arr[index];
+        else
+            return arr[index+1];
+    }
+    mini = DAC_MAX(arr,index+1,l);
+    if(arr[index] < mini)
+     return arr[index];
+    else
+        return mini;
+}
+
+int main(){
+    int arr[]={120, 34, 54, 32, 58, 11, 90};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int maxi,mini;
+    maxi = DAC_MAX(arr,0,n);
+    mini = DAC_MIN(arr,0,n);
+    cout<<"Maximum = "<<maxi<<endl;
+    cout<<"Minimum = "<<mini<<endl;
+
+}
