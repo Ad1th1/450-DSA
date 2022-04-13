@@ -1,0 +1,14 @@
+Notes:
+
+1) set 0->1 = or
+2) unset 1->0 = and
+3) toggle 0->1/1->0 = xor
+
+a xor b = c
+a xor c = b
+b xor c = a
+
+a = 001
+b = 111
+c = a xor b = 110
+a = c xor b = 001
