@@ -1,0 +1,33 @@
+Negative Weight Cycle 
+Basically Bellman Ford
+
+-> used to find shortest distance and can be applied on negative weights
+-> doesn't work for negative cycles but can detect their presence
+
+class Solution {
+public:
+	int isNegativeWeightCycle(int n, vector<vector<int>>edges){
+	    int dis[n];
+	    dis[0] = 0;
+	    for(int i=1;i<n;i++)
+	        dis[i] = INT_MAX;
+	    for(int cnt=1;cnt<n;cnt++){
+	        for(auto ed:edges){
+	            int u = ed[0];
+	            int v = ed[1];
+	            int w = ed[2];
+	            if(dis[u]!=INT_MAX && dis[u]+w<dis[v])
+	                dis[v] =dis[u] + w;
+	        }
+	    }
+	    for(auto ed:edges){
+	            int u = ed[0];
+	            int v = ed[1];
+	            int w = ed[2];
+	            if(dis[u]!=INT_MAX && dis[u]+w<dis[v])
+	              return 1;
+	        }
+	        return 0;
+	        
+	}
+};
