@@ -1,0 +1,49 @@
+https://practice.geeksforgeeks.org/problems/min-coin5549/1
+Min Coin = dp problem to ensure time complexity is not exceeded 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+class Solution{
+	public:
+	int dp[10000+1][100];
+	int help(vector<int>nums, int amount,int size){
+	    if(amount==0 || size == 0){       //always check return case for recursion
+	        return (amount==0) ? 0:INT_MAX-1;   //if you have an amount and zero coins, it would take infinite coins to meeet the condition
+          // INT_MAX - 1 to avoid buffer-overflow
+	    }
+	    
+	    if(dp[amount][size]!=-1)    //if that value has already been visited or updated
+	        return dp[amount][size];
+	    
+	    if(nums[size-1]>amount)     // to check if a value is greater than amount...should that coin be included at all or not
+	        return dp[amount][size] = help(nums,amount,size-1);
+          
+	    else    //either you don't include that coin(size-1) or you do, thereby increasing the count
+	        return dp[amount][size] = min(help(nums,amount,size-1), 1+help(nums,amount-nums[size-1],size));
+	}
+	int MinCoin(vector<int>nums, int amount)
+	{
+	    memset(dp,-1,sizeof(dp));   // Used to store some memory
+	   int no = help(nums,amount,nums.size());
+	   return no == INT_MAX-1? -1:no;
+	}
+};
+
+// { Driver Code Starts.
+int main(){
+	int tc;
+	cin >> tc;
+	while(tc--){
+		int n, amount;
+		cin >> n >> amount;
+		vector<int>nums(n);
+		for(int i = 0; i < n; i++)
+			cin >> nums[i];
+		Solution ob;
+		int ans = ob.MinCoin(nums, amount);
+		cout << ans <<"\n";
+	}
+	return 0;
+}  // } Driver Code Ends
