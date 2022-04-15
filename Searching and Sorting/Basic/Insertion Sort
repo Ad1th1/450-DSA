@@ -1,0 +1,27 @@
+//Iterate from first element and keep comparing with previous elements. If less than one of the previous elements, move the element into 
+that position and move every other element it was compared to by one position
+
+//Refer to the first 5 minutes of this video to jog your memory(https://www.youtube.com/watch?v=3GC83dh4cf0)
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int n, a[100];
+    cin>>n;
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    for(int i=1;i<n;i++){
+        int curr=a[i];
+        int j = i-1;
+        while(a[j]>curr && j>=0){
+            a[j+1]=a[j];
+            j--;
+        }
+        a[j+1]=curr;    //remember, it's j+1, because we are checking for the one element that is less than the key and inserting after it
+    }
+    for(int i=0;i<n;i++){
+        cout<<a[i]<<" ";
+    }
+}
