@@ -1,0 +1,11 @@
+Moving on the grid
+https://practice.geeksforgeeks.org/problems/moving-on-grid1135/1
+
+class Solution {
+  public:
+    string movOnGrid(int r, int c) {
+        r = (r-1)%7;
+        c = (c-1)%4;
+        return (r==c?"ARYA":"JON");
+    }
+};
