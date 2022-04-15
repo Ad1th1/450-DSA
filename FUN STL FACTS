@@ -2,6 +2,9 @@
 > Syntax for priority queue:
       priority_queue <int, vector<int>, greater<int>> g = gq;     //stored as min-heap
 > Memset
-      The memset() function sets the first count bytes of dest to the value c. The value of c is converted to an unsigned character.
-      
+      used to fill a block with a particular value
+
+> Unordered set
+      unique keys in any order
+ 
 
