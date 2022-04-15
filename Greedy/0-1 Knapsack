@@ -1,0 +1,87 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class item{
+    public:
+    int wt,val;
+};
+
+bool sort_w(item i1,item i2){
+    return i1.wt<i2.wt;
+}
+
+bool sort_v(item i1,item i2){
+    return i1.val>i2.val;
+}
+
+bool sort_d(item i1,item i2){
+    return (float)(i1.wt)/(float)(i1.val)>(float)(i2.wt)/(float)(i2.val);
+}
+
+int sorted(item it[],int n,string s){
+    if(s=="w")
+        sort(it,it+n,sort_w);
+
+    else if(s=="v")
+        sort(it,it+n,sort_v);
+
+    else if(s=="d")
+        sort(it,it+n,sort_d);
+    else{
+        cout<<"Invalid";
+        return 0;
+    }
+    return 1;
+}
+
+void load(item it[],int mw,int n,string s){
+    if(!sorted(it,n,s))
+        return;
+    
+    int profit=0;
+    int fw = mw;    //final weight
+
+    bool* taken = new bool[n];
+    for(int i=0;i<n;i++)
+    taken[i]=false;
+    int i=0;
+    while(i<n){
+        if(mw-it[i].wt>=0){
+            profit=profit + it[i].val;
+            mw = mw-it[i].wt;
+            taken[i] = true;
+        }
+        else
+        break;
+
+        i++;
+    }
+    cout<<"Weights used = "<<fw-mw<<endl;
+    cout<<"Profit Obtained = "<<profit<<endl;
+    for(int i=0;i<n;i++)
+    cout<<it[i].wt<<","<<it[i].val<<","<<" -> "<<taken[i]<<endl;
+
+}
+
+int main(){
+    int n,mw;
+    cout<<"Enter max wt and number of elements";
+    cin>>mw>>n;
+
+    item it[n];
+    cout<<"Enter elements as weight-value pairs";
+    for(int i=0;i<n;i++)
+    cin>>it[i].wt>>it[i].val;
+
+    cout<<"Greedy by weight"<<endl;
+    load(it,mw,n,"w");
+    cout<<endl;
+
+    cout<<"Greedy by profit"<<endl;
+    load(it,mw,n,"v");
+    cout<<endl;
+
+    cout<<"Greedy by density"<<endl;
+    load(it,mw,n,"d");
+    cout<<endl;
+}
