@@ -1,0 +1,36 @@
+Load the maximum containers, sort in ascending order of weight and check if max is reached
+
+#include<bits/stdc++.h>
+using namespace std;
+
+bool *func(int a[],int n,int mw){
+    bool *taken = new bool[n];
+    sort(a,a+n);
+    int i=0;
+    while(i<n){
+        if(mw-a[i]>0){
+        mw = mw-a[i];
+        taken[i] = true;
+        i++;
+        }
+        else
+        break;
+    }
+    return taken;
+}
+
+int main(){
+    int n,mw,a[1000];
+    cout<<"Enter max weight and number of objects";
+    cin>>mw>>n;
+
+    cout<<"Enter the object weights";
+    for(int i=0;i<n;i++)
+    cin>>a[i];
+
+    bool *taken = func(a,n,mw);
+
+    for(int i=0;i<n;i++)
+    cout<<a[i]<<" -> "<<taken[i]<<endl;
+
+}
