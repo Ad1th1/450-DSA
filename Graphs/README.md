@@ -1,5 +1,8 @@
 Important Points to remember:
 
+Graph has edges and vertices
+2 types = directed and undirected
+
 BFS - queue implementation for iterative approach\
 DFS - stack implementation for iterative approach
 
