@@ -23,14 +23,14 @@ class Solution
                j++;
            }
        }
-       if(i>m){
+       if(i>m){         //if one half has exhausted, fill remaining elements
            while(j<=r){
                b[k]=arr[j];
                k++;
                j++;
            }
        }
-       else{
+       else{        //if one half has exhausted, fill remaining elements
            while(i<=m){
                b[k]=arr[i];
                k++;
