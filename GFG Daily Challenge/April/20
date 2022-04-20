@@ -1,0 +1,74 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+class Solution{
+    
+	public:
+	
+class tri{
+	    public:
+	    long long pro;
+	        long long wei;
+	        
+	        long double ratio;
+	    };
+	    
+	   static bool comp(tri a,tri b){
+        
+      return a.ratio>b.ratio;
+        }  
+    
+
+	    
+	    bool check(long long a){
+	        long long x =pow(a,0.5);
+	        if(x*x==a)
+	        return true;
+	        return false;
+	    }
+
+
+	long double maximumProfit(int n, long long c, vector<long long> w, vector<long long> p){
+	    long double ans=0;
+	    vector<tri>v(n);
+	    for(int i=0;i<n;i++){
+	        v[i].pro = p[i];
+	        v[i].wei = w[i];
+	        v[i].ratio = (long double)p[i]/w[i];
+	    }
+	    
+	    sort(v.begin(),v.end(),comp);
+	    for(int i=0;i<n;i++){
+	        if(!check(v[i].wei)){
+	            if(c>=v[i].wei){
+	                ans += v[i].pro;
+	                c -= v[i].wei;
+	            }else if(c>0){
+	                ans+=v[i].ratio*c;
+	                break;
+	            }
+	        }
+	    }
+	    return ans;
+	    
+	}
+};
+
+// { Driver Code Starts.
+int main(){
+	int tc;
+	cin >> tc;
+	while(tc--){
+		int n;
+		long long C;
+		cin >> n >> C;
+		vector<long long > w(n), p(n);
+		for(int i = 0; i < n; i++){
+		    cin >> w[i] >> p[i];
+		}
+		Solution ob;
+		long double ans = ob.maximumProfit(n, C, w, p);
+		cout << fixed << setprecision(3) << ans << "\n";
+	}  
+	return 0;
