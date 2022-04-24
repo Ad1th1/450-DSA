@@ -1,0 +1,6 @@
+-> used to find strongly connected components in a graph
+-> First sort vertices topologically
+-> Then find transpose of graph
+-> Run DFS on this transposed graph
+-> Time Complexity = O(N+E)
+-> Space Complexity = O(N)
