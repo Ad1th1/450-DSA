@@ -1,0 +1,58 @@
+Euler Graph
+Conditions:
+  1. Start node = End node
+  2. Every edge is visited only once
+  3. All vertices have even degree
+  4. All vertices with non-zero degree are connected in a component. Otehr vertices have 0 degree
+  
+  Euler Path = visits every edge exactly once
+  
+  For a graph to be an Euler Path, it has to have only 2 odd vertices.
+  
+  
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+//User function Template for C++
+
+class Solution{
+public:
+    int eulerPath(int N, vector<vector<int>> graph){
+        vector<int>indegree(N,0);
+        for(int i=0;i<N;++i){
+            int count = 0;
+            for(int j=0;j<N;j++){
+                if(graph[i][j]==1)
+                count++;
+            }
+            indegree[i]=count;
+            
+        }
+        int odd=0;
+        for(int i=0;i<N;i++){
+            if(indegree[i]%2)
+            odd++;
+        }
+        return odd==2?1:0;
+    }
+};
+
+// { Driver Code Starts.
+
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int N;
+        cin>>N;
+        vector<vector<int>> graph(N, vector<int>(N, -1));
+        for(int i = 0;i < N;i++)
+            for(int j = 0;j < N;j++)
+                cin>>graph[i][j];
+        
+        Solution ob;
+        cout<<ob.eulerPath(N, graph)<<"\n";
+    }
+    return 0;
+}
