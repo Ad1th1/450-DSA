@@ -111,7 +111,7 @@ void Strassen_algorithmA(vector<vector<int>>&A,vector<vector<int>>&B, vector<vec
         add(a11,a12,aResult,new_size);
         Strassen_algorithmA(aResult,b22,p5,new_size);
 
-        //p6 = (a21 - a11) * (b11 + b12)
+        //p6 = (a12 - a22) * (b21 + b22)
         sub(a12,a22,aResult,new_size);
         add(b21,b22,bResult,new_size);
         Strassen_algorithmA(aResult,bResult,p6,new_size);
