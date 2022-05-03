@@ -1,3 +1,5 @@
+-> Hamiltonian Path in an undirected graph is a path that visits each vertex exactly once.
+
 -> np-hard problem
 -> find all possible paths in a graph
 -> ensure that you are not taking duplicate cycles
