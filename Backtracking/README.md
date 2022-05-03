@@ -3,3 +3,5 @@ Backtracking
   -> Forms a state-space tree of all possibilities
   -> Explores all possibilities by moving back and forth
   
+Backtracking -> DFS
+Branch and Bound -> BFS
