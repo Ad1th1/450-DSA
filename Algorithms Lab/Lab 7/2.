@@ -26,7 +26,7 @@ int DAC_MIN(int arr[],int index,int l){
         else
             return arr[index+1];
     }
-    mini = DAC_MAX(arr,index+1,l);
+    mini = DAC_MIN(arr,index+1,l);
     if(arr[index] < mini)
      return arr[index];
     else
