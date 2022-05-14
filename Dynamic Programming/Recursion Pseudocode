@@ -1,0 +1,11 @@
+0/1 knapsack
+
+int knapsack(int wt[],int profit,int W,int N){
+    if(n==0 || W==0)    ; base-case
+        return 0;
+    if(wt[n]>W)         ; decision-space tree
+        return knapsack(wt,profit,W,N-1);
+    else
+        return max(knapsack(wt,profit,W,N-1),knapsack(wt,profit,W-w[N],N-1);)
+
+}
