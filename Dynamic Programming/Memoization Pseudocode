@@ -1,0 +1,23 @@
+-> Storing past results to reduce expensive computation
+-> Recursion + storing your past results
+
+int knapsack(int wt[],int profit,int W,int N){
+    if(n==0 || W==0)    ; base-case
+        return 0;
+        
+    int result;
+        
+    if(wt[n]>W)         ; decision-space tree
+        return knapsack(wt,profit,W,N-1);
+        
+    else
+        result = max(knapsack(wt,profit,W,N-1),knapsack(wt,profit,W-w[N],N-1);)
+    return mem[W][N] = result;
+}
+
+Time Complexity = O(nxW)
+
+
+Problems:
+-> Space wasted
+-> Stack Overflow
