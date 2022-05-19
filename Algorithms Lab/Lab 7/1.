@@ -70,7 +70,10 @@ void Strassen_algorithmA(vector<vector<int>>&A,vector<vector<int>>&B, vector<vec
     else{
         int new_size = size/2;
         vector<int> z(new_size);
-        vector<vector<int>> a11(new_size,z),a12(new_size,z),a21(new_size,z),a22(new_size,z), b11(new_size,z),b12(new_size,z),b21(new_size,z),b22(new_size,z),c11(new_size,z),c12(new_size,z),c21(new_size,z),c22(new_size,z),p1(new_size,z),p2(new_size,z),p3(new_size,z),p4(new_size,z),p5(new_size,z),p6(new_size,z),p7(new_size,z),aResult(new_size,z),bResult(new_size,z);
+        
+        vector<vector<int>> a11(new_size,z),a12(new_size,z),a21(new_size,z),a22(new_size,z), b11(new_size,z),b12(new_size,z),b21(new_size,z),
+        b22(new_size,z),c11(new_size,z),c12(new_size,z),c21(new_size,z),c22(new_size,z),p1(new_size,z),p2(new_size,z),p3(new_size,z),p4(new_size,z),
+        p5(new_size,z),p6(new_size,z),p7(new_size,z),aResult(new_size,z),bResult(new_size,z);
 
         int i,j;
 
@@ -176,14 +179,18 @@ void Strassen_algorithm(vector<vector<int>>&A,vector<vector<int>>&B,int m,int n,
     }
 
     Strassen_algorithmA(Aa,Bb,Cc,s);
+    
     vector<int> temp1(b);
     vector<vector<int>>C(m,temp1);
+    
     for(unsigned int i=0;i<m;i++){
         for(unsigned int j=0;j<b;j++){
             C[i][j] = Cc[i][j];
         }
     }
+    
     display(C,m,b);
+    
 }
 
 int main(){
