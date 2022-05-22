@@ -1,0 +1,4 @@
+malloc:
+-> short for memory allocation
+-> gives us a memory address in heap 
+Eg: Node *lol = (Node*) malloc(sizeof(Node);
