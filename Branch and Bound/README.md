@@ -1,0 +1,5 @@
+- State-space tree
+- has bounds
+- BFS
+- Queue(fifo), stack(lifo) and least cost method
+-  
