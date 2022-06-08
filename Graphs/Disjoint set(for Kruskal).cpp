@@ -1,11 +1,12 @@
-Disjoint Set | Union By Rank and Path Compression
+//Disjoint Set | Union By Rank and Path Compression
 
--> find parent for each node
--> do unions
--> compress path by reducing depth of tree
+//-> find parent for each node
+//-> do unions
+//-> compress path by reducing depth of tree
 
-Time Complexity = O(4X)
-Space Complexity = O(n)   ---> rank and parent array
+//Time Complexity = O(4X)
+//Space Complexity = O(n)   ---> rank and parent array
+
 #include<iostream>
 
 int parent[100000];
