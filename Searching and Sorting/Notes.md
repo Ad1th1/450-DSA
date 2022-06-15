@@ -1,5 +1,5 @@
 - Quick sort sucks if evertything is already sorted in ascending order
-- Quick sort -> worst case = O(n^2)
+- Quick sort -> worst case = O(n^2) -> when list is already sorted
 
 - Searching Techniques I know:
   - linear search
