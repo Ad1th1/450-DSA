@@ -1,5 +1,8 @@
 - Quick sort sucks if evertything is already sorted in ascending order
 - Quick sort -> worst case = O(n^2) -> when list is already sorted
+- to make quick sort more awesome
+  - select middle element as pivot
+  - select random element as pivot
 
 - Searching Techniques I know:
   - linear search
