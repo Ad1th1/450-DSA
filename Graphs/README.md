@@ -29,14 +29,15 @@ Disjoint set - data structure with parent and rank array for Kruskal's algorithm
 parent
 
 MST 
--> contains N nodes and N-1 edges\
--> every node is reachable -> spanning tree\
--> minimum cost of edge weight -> MST\
--> cannot have cycles \
--> Prims and Kruskal algorithm
+- contains N nodes and N-1 edges\
+- every node is reachable -> spanning tree\
+- minimum cost of edge weight -> MST\
+- cannot have cycles \
+- Prims and Kruskal algorithm
 
 Kruskal Algorithm:
--> graph in disjoint set data structure
+- graph in disjoint set data structure
+- take edges one-by-one and add to the spanning trees
 
 
 Connected Graph:\
