@@ -1,0 +1,16 @@
+class Solution {
+  public:
+    
+    long long dfs(int S[], int m, int n){
+        if(n==0)
+            return 1;
+        if(n<0 || m<=0)
+            return 0;
+        return dfs(S,m-1,n) + dfs(S,m,n-S[m-1]);
+    }
+  
+    long long int count(int S[], int m, int n) {
+        return dfs(S,m,n);
+        // code here.
+    }
+};
